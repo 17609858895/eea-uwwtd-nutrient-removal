@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+raw/
+analysis/data/
+analysis/results/
+*.parquet
+*.pkl
+*.joblib
+*.gpkg
+*.zip
