@@ -1,6 +1,6 @@
 # EEA UWWTD nutrient-removal analysis
 
-Core analysis code for **Treatment-state decomposition revises nutrient-removal gains in Europe's wastewater registry**.
+Core analysis code for **Cleaner secondary-treatment baselines shrink nutrient gains from wastewater upgrades in Europe**.
 
 The code estimates treatment contrasts from the public European treatment-plant registry, decomposes influent pass-through into treatment states, and evaluates sensitivity, heterogeneity, upgrade scenarios and earlier reporting rounds. This repository contains analysis source and lightweight checks. Raw data, fitted models, plant-level predictions, manuscripts and publication-layout tools are not distributed here.
 
@@ -59,7 +59,8 @@ All commands run from the repository root. `--dry-run` prints a stage's commands
 | Nuisance alternatives | `python run_analysis.py learner` | `main`; three-repeat super learner and common-population comparison |
 | Semi-synthetic | `python run_analysis.py simulation` | `support`; N-covariate simulations, 20 replicates per scenario |
 | Prediction benchmark | `python run_analysis.py benchmark` | Prepared data; 21 base learners and 3 hybrid/ensemble configurations, random and leave-country-out validation |
-| Earlier rounds | `python run_analysis.py longitudinal` | Earlier GeoPackages and `scenario`; linked-round treatment flags and within-plant comparisons |
+| Earlier rounds | `python run_analysis.py longitudinal` | Earlier GeoPackages and `scenario`; linked-round treatment flags, within-plant comparisons and three-round event-study trajectories |
+| Transfer and calibration | `python run_analysis.py transfer` | `simulation` and `benchmark`; component ablation and interval calibration of the simulations, R^2 loss by learner family and withheld-country errors |
 
 The source filenames retain their analysis-stage numbering so that intermediate outputs match their consumers. Some analysis scripts execute work at module level: use the runner rather than importing stage scripts. `common.py` and `causal_core.py` contain shared feature and estimator functions.
 
