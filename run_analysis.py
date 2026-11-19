@@ -19,7 +19,8 @@ STAGES = {
     'learner': [('11_final_estimates.py', 'sl', '3'), ('11b_learner_sensitivity.py',)],
     'simulation': [('05_semisynthetic.py',)],
     'benchmark': [('06_benchmark20.py', p, cv) for p in ['N', 'P'] for cv in ['random5', 'LOCO']],
-    'longitudinal': [('19_panel_check.py',)],
+    'longitudinal': [('19_panel_check.py',), ('20_panel_event.py',)],
+    'transfer': [('21_transfer_calibration_summary.py',)],
 }
 
 def main():
